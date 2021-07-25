@@ -1,0 +1,78 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    background: linear-gradient(to left bottom, #072A40,#178CA4) !important;
+    height: 100%;
+    color: #072A40 !important;
+}
+
+.container {
+    text-align: center;
+}
+
+.page {
+    vertical-align: middle;
+    background: linear-gradient(to right top, rgba(249, 247, 240, 0.6), rgba(249, 247, 240, 0.2)) !important;
+    text-align: center;
+    border-radius: 3rem;
+    font-family: 'Orelega One', cursive;
+    height: 100%;
+}
+
+
+.login-box {
+    background-color: white;
+    background: linear-gradient(to right top, rgba(24, 183, 190, 0.8), rgba(24, 183, 190, 0.1)) !important;
+    border-radius: 3rem;   
+}
+
+footer {
+    align-content: center;
+    vertical-align: middle;
+    height: 10vh;
+}
+
+.btn-position{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.btn-logout, .btn-login, .btn-signup, .btn-edit, .btn-plus, .btn-save, .btn-back {
+    color: #072A40 !important;
+    border-color: #178CA4 !important;
+}
+
+.btn-save:hover{
+    background-color: #178CA4 !important;
+}
+.btn-back:hover{
+    background-color: #178CA4 !important;
+}
+.btn-edit:hover{
+    background-color: #178CA4 !important;
+}
+ .btn-login:hover{
+    background-color: #178CA4 !important;
+}
+ .btn-signup:hover{
+    background-color: #178CA4 !important;
+}
+ .btn-logout:hover{
+    background-color: #178CA4 !important;
+}
+ .btn-plus:hover{
+    background-color: #178CA4 !important;
+}
+
+.note{
+    margin-top: 1rem;
+}
+
+.note-section{
+    margin-top: 2rem;
+    height: 70vh;
+}

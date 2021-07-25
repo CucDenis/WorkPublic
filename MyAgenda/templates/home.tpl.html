@@ -1,0 +1,51 @@
+{{ include('head.inc.html') }}
+<body>
+    <div class="container page">
+        <div class="row h-100">
+            <div class="col-md-3 my-auto">
+                <div class="row">
+                    <div class="d-flex justify-content-center">
+                        <h3>User: {{ user }}</h3>
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="d-flex justify-content-center">
+                        <form action="login.php" method="post">
+                            <button  type="submit" class="btn btn-logout btn-outline-light">{{ buttonL }}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 login-box  ">
+                <div class="note-section overflow-auto">
+                    {% for note in result_notes %}
+                    <div class="row-md note">
+                        <div class="col-md">
+                        <div class="card mx-auto" style="width: 60%;">
+                            <div class="card-body " >
+                            <h5 class="card-title">{{ note.titlu }}</h5>
+                            <p class="card-text">{{ decrypt(note.continut) }}</p>
+                            <div class="row">
+                                <div class="col">
+                                    <form method="POST" action="edit_delete.php">
+                                    <button type="submit" name="edit" value="{{ note.id }}" class="btn btn-edit btn-outline-warning">Edit</a>
+                                    <input type="hidden" name="titluNota" value="{{ note.titlu }}">
+                                    <button type="submit" name="delete" value="{{ note.id }}" class="btn btn-link-light">Delete</a>
+                                </div>
+                                <div class="col text-center blockquote-footer ">
+                                    <p>{{ note.note_creation }}</p>
+                                </div>
+                                </form>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <button onclick='window.location.replace("notepageNew.php")' type="button" class=" btn btn-plus btn-outline-warning mt-5">+</button>
+            </div>
+        </div>
+    </div>
+</body>
+{{include("end.inc.html")}}

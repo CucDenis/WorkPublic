@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: none;
+    scrollbar-color:#072A40;
+    scrollbar-width: thin;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(to left bottom, #072A40,#178CA4) !important;
+    display: flex !important;
+    align-items: center !important;
+    color: #072A40 !important;
+}
+
+.row{
+    width: 100% !important;
+}
+
+.note-section{
+    margin-top: 2rem;
+    height: 70vh;
+}
+
+.glass-page {
+    background-color: white;
+    min-height: 80vh;
+    background: linear-gradient(to right top, rgba(24, 183, 190, 0.8), rgba(24, 183, 190, 0.1)) !important;
+    border-radius: 2rem;
+    display: flex !important;
+    align-content: center !important;
+    justify-content: left !important;
+}
+
+.background-area{
+    display: flex !important;
+    flex-direction: column !important;
+    align-content: center !important;
+    justify-content: space-evenly !important;
+    text-align: center;
+    border-radius: 2rem;
+    font-family: 'Orelega One', cursive;
+}
+
+
+.dashboard {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-content: center !important;
+    justify-content: space-evenly !important;
+    background: linear-gradient(to right top, rgba(249, 247, 240, 0.6), rgba(249, 247, 240, 0.2)) !important;
+    text-align: center;
+    border-radius: 2rem;
+    font-family: 'Orelega One', cursive;
+}
+
+.note{
+    flex: 2 !important;
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    margin-top: 1rem;
+}
+
+.btn-position{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+
+.btn-edit{
+    color: #072A40 !important;
+    border-color: #178CA4 !important;
+}
+
+.btn-edit:hover{
+    background-color: #178CA4 !important;
+}
+
+textarea{
+    height: 50vh;
+}
+
+input{
+    height: 5vh;
+}
+
+.modificat{
+    font-size: 8px;
+}
+
+.user{
+    font-size: 2rem !important;
+}
+.flex-v-center{
+    display: flex !important;
+    align-items: center !important;
+}

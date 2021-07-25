@@ -1,0 +1,36 @@
+{{ include('head.inc.html') }}
+<body>
+    <div class="container page">
+        <div class="row h-100">
+            <div class="col my-auto">
+                    <form method="POST" action="insert.php">
+                        <h1>Note:</h1>
+                        <div class="form-group mt-4">
+                            <label for="title">Title:</label>
+                            {% if modify == true %}
+                                <input type="text" name="title" id="title" value = "{{ titluNota }}" />
+                            {% else %}
+                                <input type="text" name="title" placeholder="Title"/>
+                            {% endif %}
+                        </div>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-6 mt-3">
+                                <div class="form-group mt-4">
+                                    <label for="continut">Your text:</label>
+                                    {% if modify == true %}
+                                        <textarea class="form-control" name="continut" rows="10" maxlength="1500">{{ decrypt(continutNota) }}</textarea>
+                                    {% else %}
+                                        <textarea class="form-control" name="continut" rows="10" maxlength="1500" placeholder="Write something here..."></textarea>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-save btn-outline-warning btn-sm mt-5">Save</button>
+                        <a href="home.php" class="btn btn-back btn-outline-warning btn-sm mt-5">Back</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{{include("end.inc.html")}}

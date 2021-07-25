@@ -1,0 +1,54 @@
+{{ include("head.inc.html") }}
+<body>
+<div class="container glass-page">
+    <div class="background-area note">
+        <h1 class="d-flex justify-content-center">Sign Up</h1>
+        <form method="POST" action="signup.php">
+            <div class="row .flex-v-center mt-5">
+                <label for="firstname">First Name:</label>
+                    <div class="form-group">
+                        <input type="text" name="firstname" id="firstname" placeholder="Doe"/>
+                    </div>
+            </div>
+            <div class="row flex-v-center mt-3">
+                <label for="lastname">Last Name:</label>
+                    <div class="form-group">
+                        <input type="text" name="lastname" placeholder="John"/>
+                    </div>
+            </div>
+            <div class="row flex-v-center mt-3">
+                <label for="username">Username:</label>
+                <div class="form-group">
+                    <input type="text" name="username" id="username" placeholder="johndoe2021"/>
+                </div>
+            </div>
+            <div class="row flex-v-center mt-3">
+                <label for="email">Email:</label>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="doejohn@example.com"/>
+                </div>
+            </div>
+            <div class="row flex-v-center mt-3">
+                <label for="password">Password:</label>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="passWORD#*21"/>
+                </div>
+            </div>
+            <div class="row flex-v-center mt-3">
+                <label for="retypedpassword">Re-Password:</label>
+                <div class="form-group">
+                    <input type="password" name="retypedpassword" placeholder="passWORD#*21"/>
+                </div>
+            </div>
+            <div class="row flex-v-center my-sm-5">
+                <div class="col-md">
+                    <button type="submit" class="btn btn-outline-light">Create</a>
+                </div>
+                <div class="col-md ">
+                    <a href="indexNew.php" class="btn btn-link-light">Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{{ include("end.inc.html") }}

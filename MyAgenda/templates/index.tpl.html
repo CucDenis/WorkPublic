@@ -1,0 +1,93 @@
+{{ include('head.inc.html') }}
+<body>
+  <div class="container glass-page">
+    <div class="row">
+      <div class="col-md-4 dashboard">
+        <div class="row-md">
+
+          <div class="col-md">
+            <h1>Jurnal</h1>
+          </div>
+
+          <div class="col-md">
+            {% if LoggedIn == false %}
+            <h2>Log In</h2>
+            {% endif %}
+          </div>
+              
+          <form method="POST" action="login.php">
+          <!-- Grid row -->
+            <div class="form-row ">
+            <!-- Grid column -->
+              <div class="col-xs ">
+              <!-- Material input -->
+                <div class="md-form form-group">
+                  {%  if LoggedIn == false %}
+                  <input type="text" class="form-control" name="username" placeholder="Username">
+                  {% endif %}
+                </div>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-xs">
+              <!-- Material input -->
+                <div class="md-form form-group mt-2">
+                  {%  if LoggedIn == false %}
+                  <input type="password" class="form-control" name="password" placeholder="Password">
+                  <a href="signup_form.php" class="btn btn-outline-light">SignUp</a>
+                  {% endif %}
+                  <button  type="submit" class="btn btn-outline-light">{{ buttonL }}</button>
+                </div>
+              </div>
+              <!-- Grid column -->
+            </div>
+          </form>
+          {%  if LoggedIn == true %}
+          <div class="user mt-4 text-center ">User : {{ user }}</div>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="col-md-8  notes justify-content: center">
+        <div class="note-section overflow-auto">
+        <!-- <div id="overlay"></div> -->
+        {% for note in result_notes %}
+          <div class="row-md note">
+            <div class="col-md">
+              <div class="card mx-auto" style="width: 60%;">
+                <div class="card-body " >
+                  <h5 class="card-title">{{ note.titlu }}</h5>
+                  <p class="card-text">{{ decrypt(note.continut) }}</p>
+                  <div class="row">
+                    <div class="col">
+                        <form method="POST" action="edit_delete.php">
+                        <button type="submit" name="edit" value="{{ note.id }}" class="btn btn-edit btn-outline-light">Edit</a>
+                        <input type="hidden" name="titluNota" value="{{ note.titlu }}">
+                        <button type="submit" name="delete" value="{{ note.id }}" class="btn btn-link-light">Delete</a>
+                      </div>
+                      <div class="col text-center blockquote-footer ">
+                        <p>{{ note.note_creation }}</p>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+
+        <div class="row plus-section">
+          <div class="col-md btn-position">
+            {% if LoggedIn == true %}
+            <button onclick='window.location.replace("notepage.php")' type="button" class="btn btn-outline-light ">+</button>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+  {{include("end.inc.html")}}

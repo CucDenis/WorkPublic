@@ -1,0 +1,39 @@
+  {{ include("head.inc.html") }}
+<body>
+<div class="container glass-page">
+    <div class="background-area note">
+        <form method="POST" action="insert.php">
+            <div class="row">
+                <div class="col">
+                    <div class="form-group">
+                        {% if modify == true %}
+                            <input type="text" name="title" value = "{{ titluNota }}" />
+                        {% else %}
+                            <input type="text" name="title" placeholder="Title"/>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 mt-3">
+                    <div class="form-group">
+                        {% if modify == true %}
+                            <textarea class="form-control" name="continut" rows="3" maxlength="1500">{{ decrypt(continutNota) }}</textarea>
+                        {% else %}
+                            <textarea class="form-control" name="continut" rows="3" maxlength="1500" placeholder="Write something here..."></textarea>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6">
+                    <button type="submit" class="btn btn-light">Save</a>
+                </div>
+                <div class="col-md-6">
+                    <a href="index.php" class="btn btn-link-light">Back</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{{ include("end.inc.html") }}
